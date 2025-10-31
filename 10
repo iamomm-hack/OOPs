@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+class Palindrome {
+    String str;
+
+    // Method to take input
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        str = sc.nextLine();
+    }
+
+    // Method to check palindrome
+    void checkPalindrome() {
+        String reversed = "";
+        int length = str.length();
+
+        for (int i = length - 1; i >= 0; i--) {
+            reversed += str.charAt(i);
+        }
+
+        if (str.equalsIgnoreCase(reversed))
+            System.out.println(str + " is a Palindrome.");
+        else
+            System.out.println(str + " is not a Palindrome.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Palindrome p = new Palindrome();
+        p.input();
+        p.checkPalindrome();
+    }
+}
+
+
+##OUTPUT:
+
+Enter a string: Level
+Level is a Palindrome.
