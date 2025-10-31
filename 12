@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+class SentenceProcessor {
+    String sentence;
+
+    // Method to take input
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a sentence: ");
+        sentence = sc.nextLine();
+    }
+
+    // Method to count words and reverse each word
+    void processSentence() {
+        // Split sentence into words using space
+        String[] words = sentence.trim().split("\\s+");
+        int wordCount = words.length;
+
+        System.out.println("\nNumber of words: " + wordCount);
+
+        System.out.println("Reversed words in sentence:");
+        for (String word : words) {
+            String reversed = new StringBuilder(word).reverse().toString();
+            System.out.print(reversed + " ");
+        }
+        System.out.println(); // move to new line
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SentenceProcessor sp = new SentenceProcessor();
+        sp.input();
+        sp.processSentence();
+    }
+}
+
+
+##OUTPUT
+
+Enter a sentence: Java is fun to learn
+
+Number of words: 5
+Reversed words in sentence:
+avaJ si nuf ot nrael
