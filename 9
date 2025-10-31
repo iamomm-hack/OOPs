@@ -1,0 +1,88 @@
+import java.util.Scanner;
+
+class Employee {
+    int eid;
+    String name;
+    double salary;
+
+    // Default constructor
+    Employee() {
+        eid = 0;
+        name = "";
+        salary = 0.0;
+    }
+
+    // Method to take input
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Employee ID: ");
+        eid = sc.nextInt();
+        sc.nextLine(); // to consume the leftover newline
+        System.out.print("Enter Employee Name: ");
+        name = sc.nextLine();
+        System.out.print("Enter Employee Salary: ");
+        salary = sc.nextDouble();
+    }
+
+    // Method to display employee data
+    void display() {
+        System.out.printf("%-10d %-15s %-10.2f\n", eid, name, salary);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of employees: ");
+        int n = sc.nextInt();
+
+        // Create array of Employee objects
+        Employee[] emp = new Employee[n];
+
+        // Input employee details
+        for (int i = 0; i < n; i++) {
+            System.out.println("\nEnter details of Employee " + (i + 1) + ":");
+            emp[i] = new Employee();
+            emp[i].input();
+        }
+
+        // Display employee records in tabular format
+        System.out.println("\n-----------------------------------------------");
+        System.out.printf("%-10s %-15s %-10s\n", "Emp ID", "Name", "Salary");
+        System.out.println("-----------------------------------------------");
+        for (int i = 0; i < n; i++) {
+            emp[i].display();
+        }
+        System.out.println("-----------------------------------------------");
+    }
+}
+
+
+
+##OUTPUT:
+
+Enter number of employees: 3
+
+Enter details of Employee 1:
+Enter Employee ID: 101
+Enter Employee Name: Om
+Enter Employee Salary: 45000
+
+Enter details of Employee 2:
+Enter Employee ID: 102
+Enter Employee Name: Priya
+Enter Employee Salary: 52000
+
+Enter details of Employee 3:
+Enter Employee ID: 103
+Enter Employee Name: Rahul
+Enter Employee Salary: 48000
+
+-----------------------------------------------
+Emp ID     Name            Salary    
+-----------------------------------------------
+101        Om              45000.00  
+102        Priya           52000.00  
+103        Rahul           48000.00  
+-----------------------------------------------
