@@ -1,0 +1,62 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+class StringSorter {
+    String[] words;
+    int n;
+
+    // Method to take input
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of strings: ");
+        n = sc.nextInt();
+        sc.nextLine(); // consume leftover newline
+
+        words = new String[n];
+        System.out.println("Enter the strings:");
+        for (int i = 0; i < n; i++) {
+            System.out.print("String " + (i + 1) + ": ");
+            words[i] = sc.nextLine();
+        }
+    }
+
+    // Method to sort strings lexicographically
+    void sortStrings() {
+        Arrays.sort(words);
+    }
+
+    // Method to display sorted strings
+    void display() {
+        System.out.println("\nStrings in lexicographical order:");
+        for (String word : words) {
+            System.out.println(word);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        StringSorter sorter = new StringSorter();
+        sorter.input();
+        sorter.sortStrings();
+        sorter.display();
+    }
+}
+
+
+##OUTPUT
+
+Enter number of strings: 5
+Enter the strings:
+String 1: Mango
+String 2: Apple
+String 3: Orange
+String 4: Banana
+String 5: Grapes
+
+Strings in lexicographical order:
+Apple
+Banana
+Grapes
+Mango
+Orange
