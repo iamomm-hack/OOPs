@@ -1,0 +1,53 @@
+class Shape {
+    double area;
+
+    // Default constructor
+    Shape() {
+        area = 0.0;
+    }
+
+    // Method overloading for different shapes
+
+    // 1️⃣ Area of a Square (side * side)
+    void findArea(int side) {
+        area = side * side;
+        System.out.println("Area of Square: " + area);
+    }
+
+    // 2️⃣ Area of a Circle (π * r * r)
+    void findArea(double radius) {
+        area = 3.14159 * radius * radius;
+        System.out.println("Area of Circle: " + area);
+    }
+
+    // 3️⃣ Area of a Rectangle (length * breadth)
+    void findArea(int length, int breadth) {
+        area = length * breadth;
+        System.out.println("Area of Rectangle: " + area);
+    }
+
+    // 4️⃣ Area of a Triangle (½ * base * height)
+    void findArea(int base, int height, int x) {
+        area = 0.5 * base * height;
+        System.out.println("Area of Triangle: " + area);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape s = new Shape();
+
+        s.findArea(5);           // Square
+        s.findArea(3.5);         // Circle
+        s.findArea(4, 6);        // Rectangle
+        s.findArea(5, 8, 1);     // Triangle
+    }
+}
+
+
+
+##OUTPUT:
+Area of Square: 25.0
+Area of Circle: 38.4849475
+Area of Rectangle: 24.0
+Area of Triangle: 20.0
